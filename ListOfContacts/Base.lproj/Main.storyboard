@@ -43,7 +43,7 @@
                             <outlet property="delegate" destination="gZM-rn-qJN" id="COw-Hc-jhK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Hgl-wW-BZw"/>
+                    <tabBarItem key="tabBarItem" title="Contact" id="Hgl-wW-BZw"/>
                     <navigationItem key="navigationItem" title="Root View Controller" leftItemsSupplementBackButton="YES" id="FoH-Py-Wmf">
                         <barButtonItem key="backBarButtonItem" title="Back" id="e9Z-IV-0km"/>
                     </navigationItem>
@@ -184,7 +184,7 @@
                             <outlet property="delegate" destination="7Fb-pb-2qL" id="sAu-n3-0QM"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="VsG-7X-ibb"/>
+                    <tabBarItem key="tabBarItem" title="More Info" id="VsG-7X-ibb"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="sYN-AB-2TN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXQ-SB-OEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

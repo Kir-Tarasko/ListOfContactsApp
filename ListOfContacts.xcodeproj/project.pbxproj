@@ -66,20 +66,52 @@
 		95270D17277B169600DFCCE6 /* ListOfContacts */ = {
 			isa = PBXGroup;
 			children = (
-				95270D18277B169600DFCCE6 /* AppDelegate.swift */,
-				95270D1A277B169600DFCCE6 /* SceneDelegate.swift */,
-				95270D1E277B169600DFCCE6 /* Main.storyboard */,
-				95270D2C277B1C4900DFCCE6 /* ContactsListController.swift */,
-				95270D34277B3C4F00DFCCE6 /* HumanInfoViewController.swift */,
-				95270D32277B3B5A00DFCCE6 /* MoreInfoViewController.swift */,
-				95270D36277B3D6C00DFCCE6 /* TabBarViewController.swift */,
-				95270D2E277B1D0B00DFCCE6 /* DataManager.swift */,
-				95270D30277B340700DFCCE6 /* Person.swift */,
+				95CDE8CC277C80A100B9D507 /* App */,
+				95CDE8CB277C806100B9D507 /* Models */,
+				95CDE8CA277C802600B9D507 /* ViewControllers */,
+				95CDE8CD277C80DA00B9D507 /* Services */,
 				95270D21277B169700DFCCE6 /* Assets.xcassets */,
+				95270D1E277B169600DFCCE6 /* Main.storyboard */,
 				95270D23277B169700DFCCE6 /* LaunchScreen.storyboard */,
 				95270D26277B169700DFCCE6 /* Info.plist */,
 			);
 			path = ListOfContacts;
+			sourceTree = "<group>";
+		};
+		95CDE8CA277C802600B9D507 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				95270D2C277B1C4900DFCCE6 /* ContactsListController.swift */,
+				95270D34277B3C4F00DFCCE6 /* HumanInfoViewController.swift */,
+				95270D36277B3D6C00DFCCE6 /* TabBarViewController.swift */,
+				95270D32277B3B5A00DFCCE6 /* MoreInfoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95CDE8CB277C806100B9D507 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95270D30277B340700DFCCE6 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95CDE8CC277C80A100B9D507 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				95270D1A277B169600DFCCE6 /* SceneDelegate.swift */,
+				95270D18277B169600DFCCE6 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		95CDE8CD277C80DA00B9D507 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				95270D2E277B1D0B00DFCCE6 /* DataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
