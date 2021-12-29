@@ -9,47 +9,40 @@ import UIKit
 
 class ContactsListTableViewController: UITableViewController {
     
-    var humans: [Human] = []
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-    }
-   
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    var humans: [Human]!
         
-        return humans.count
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let human = humans[indexPath.row]
+        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            
+            return humans.count
+        }
         
-        cell.textLabel?.text = human.fullName
-        return cell
-      
         
-  
-    }
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            
+            var content = cell.defaultContentConfiguration()
+            let human = humans[indexPath.row]
+            
+            content.text = human.fullName
+            cell.contentConfiguration = content
+            return cell
+            
+            
+            
+        }
     
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-        
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            let infoVC = segue.destination as! HumanViewController
-            infoVC.human = humans[indexPath.row]
-        }
-    }
+           guard let humanInfoVC = segue.destination as? HumanViewController else { return }
+           guard let indexPath = tableView.indexPathForSelectedRow else { return }
+           humanInfoVC.human = humans[indexPath.row]
+       }
+   }
     
    
-}
+
 
  

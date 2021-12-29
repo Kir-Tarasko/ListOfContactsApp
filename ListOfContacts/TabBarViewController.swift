@@ -9,18 +9,16 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
-    let humans = Human.getPerson()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        anotherVCs(with: humans)
+        anotherVCs()
     }
  
-}
 
-extension TabBarViewController {
-    private func anotherVCs(with humans: [Human]) {
+    private func anotherVCs() {
+        let humans = Human.getPerson()
         let contactslistVC = viewControllers?.first as! ContactsListTableViewController
         let moreInfoVC = viewControllers?.last as! MoreInfoViewController
         contactslistVC.humans = humans

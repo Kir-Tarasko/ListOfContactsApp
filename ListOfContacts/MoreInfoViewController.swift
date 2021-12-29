@@ -9,45 +9,43 @@ import UIKit
 
 class MoreInfoViewController: UITableViewController {
     
-    var humans: [Human] = []
+    var humans: [Human]!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return humans.count
     }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         humans[section].fullName
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 2
-        
+        return 2
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        let human = humans[indexPath.row]
+        
+        let human = humans[indexPath.section]
+        var content = cell.defaultContentConfiguration()
+        
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = human.email
-            cell.imageView?.image = UIImage(systemName: Contacts.phone.rawValue)
+            content.text = human.phoneNumber
+            content.image = UIImage(systemName: Contacts.phone.rawValue)
         default:
-            cell.textLabel?.text = human.phoneNumber
-            cell.imageView?.image = UIImage(systemName: Contacts.email.rawValue)
-
+            content.text = human.email
+            content.image =  UIImage(systemName: Contacts.email.rawValue)
+        }
         
-    }
+        cell.contentConfiguration = content
+        
         return cell
-}
-
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true) // снять выделение с ячейки
+    }
 }
